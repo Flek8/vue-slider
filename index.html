@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carosello VueJS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+   <div class="container" id="app">
+        <div class="items">
+                <div class="item active">
+                    <img :src="items[active].photo" alt="">
+                    <div class="text">
+                        <h3>{{items[active].title}}</h3>
+                        <p>{{items[active].text}}</p>
+                    </div>
+                </div> 
+        </div>
+        <div class="thumbs">
+            
+            <div v-for="(elemento, indice) in items" class="thumb" :class="indice == active?'active':'' ">
+                <img :src="elemento.photo" alt="">
+            </div> 
+        
+            <div class="prev" @click="prev"></div>
+            <div class="next" @click="next"></div>
+        </div>
+   </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
