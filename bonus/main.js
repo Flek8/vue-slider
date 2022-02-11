@@ -30,7 +30,6 @@ const vue = new Vue (
                 }
             ],
             active: 0,
-            clock: 0,
         },
         methods:{
 
